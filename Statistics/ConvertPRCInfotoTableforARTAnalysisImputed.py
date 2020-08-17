@@ -1,10 +1,12 @@
 #!/usr/bin/env ipython
-# usage:
-#	ConvertPRCInfotoTableforARTAnalysisImputed.py\
-#		PRC_table_Binning_Npas4++_Imputed.csv\
-#		PRC_table_Binning_Npas4--_Imputed.csv\
-#		3
-#	3: binwidth, grouping CT levels every 3 hours
+'''
+usage:
+	ConvertPRCInfotoTableforARTAnalysisImputed.py\
+		PRC_table_Binning_Npas4++_Imputed.csv\
+		PRC_table_Binning_Npas4--_Imputed.csv\
+		3
+	3: binwidth, grouping CT levels every 3 hours
+'''
 
 import numpy as np
 import sys

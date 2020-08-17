@@ -1,15 +1,17 @@
 #!/usr/bin/env ipython
-# usage:
-#	PRCKernelEstimationImputation.py\
-#		PRC_table_wo_Binning_Npas4++.csv\
-#		PRC_table_wo_Binning_Npas4--.csv\
-#		PRC_table_Binning_Npas4++.csv\
-#		PRC_table_Binning_Npas4--.csv\
-#		1 0.01 3 1.5
-#		1: bandwidth (h)
-#		0.01: smoothed curve step size (xstep)
-#		3: binwidth, grouping CT levels every 3 hours
-#		1.5: binoffset, 24 - 1.5 = 22.5 h
+'''
+usage:
+	PRCKernelEstimationImputation.py\
+		PRC_table_wo_Binning_Npas4++.csv\
+		PRC_table_wo_Binning_Npas4--.csv\
+		PRC_table_Binning_Npas4++.csv\
+		PRC_table_Binning_Npas4--.csv\
+		1 0.01 3 1.5
+		1: bandwidth (h)
+		0.01: smoothed curve step size (xstep)
+		3: binwidth, grouping CT levels every 3 hours
+		1.5: binoffset, 24 - 1.5 = 22.5 h
+'''
 
 import sys
 import numpy as np

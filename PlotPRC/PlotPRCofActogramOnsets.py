@@ -1,4 +1,28 @@
 #!/usr/bin/env ipython
+'''
+# usage:
+	PlotPRCofActogramOnsets.py\
+		A2_KO_PRC_Data.csv\
+		A2_WT_PRC_Data.csv\
+		A3_KO_PRC_Data.csv\
+		A4_WT_PRC_Data.csv\
+		C2_KO_PRC_Data.csv\
+		C2_WT_PRC_Data.csv\
+		0.5 3 14 3 1.5
+	*_PRC_Data.csv: Phase info
+	0.5: adjusted R-squared  
+	3: root mean square error
+	14: number of days when fitting onsets before and after the light pulse
+	3: binwidth, grouping CT levels every 3 hours
+	1.5: binoffset, 24 - 1.5 = 22.5 h
+
+
+	output:	Pin_Figure6_PRC_PTC.pdf
+			PRC_table_wo_Binning_Npas4++.csv
+			PRC_table_wo_Binning_Npas4--.csv
+			PRC_table_Binning_Npas4++.csv
+			PRC_table_Binning_Npas4--.csv
+'''
 import os
 import sys
 import numpy as np

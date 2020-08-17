@@ -16,7 +16,6 @@ attach(data)
 lmfitdata <- lm(Phaseshift ~ CT*Genotype, data=data)
 
 # 1. Shapiro-Wilk residual normality test
-
 res1=residuals(lmfitdata,type="response")
 #res2=residuals(lmfitdata,type="pearson")
 #res3=rstudent(lmfitdata)
@@ -27,14 +26,15 @@ shapiro.test(res1)
 #shapiro.test(res3)
 #shapiro.test(res4)
 
-# 2. Levene's variance homogeneity test
+# 2. Levene's homogeneity of variance test
 library(car)
 leveneTest(Phaseshift ~ CT*Genotype, data=data)
 
 
 pdf("PRC_ResidualPlot.pdf")
-par(mfcol=c(1,2))   #1x2
+#par(mfcol=c(1,3))   #1x3
 plot(lmfitdata, 1:2) # Plot diagnostics for the model
+hist(lmfitdata$residuals,main="Histogram of residuals")
 dev.off()
 
 #===================================================================================
@@ -44,24 +44,23 @@ m <- art(Phaseshift ~ CT*Genotype, data=data)
 print (m)
 anova(m, response="aligned")
 anova(m)
+#shapiro.test(residuals(m))
+#qqnorm(residuals(m))
+#qqline(residuals(m))
 
 # post-hoc test with pairwise contrast on each factor
 #	not correct due to a significant interaction between CT and Genotype from ANOVA test
 library(emmeans)
 EMinteraction <- contrast(emmeans(artlm(m, "CT:Genotype"), ~ CT:Genotype), method="pairwise", interaction=TRUE)
-print ('EMinteraction')
-print (EMinteraction)
+#print (EMinteraction)
 write.table(EMinteraction, file = "PRC_ART_pairwise_comparison_by_interaction_tstat_output.csv", sep = "\t")
-print ('Check')
 
 EMCT <- contrast(emmeans(artlm(m, "CT"), ~ CT), method="pairwise")
 # write.table(EMCT$contrasts, file = "PRC_ART_pairwise_comparison_by_CT_output.csv", sep = "\t")
-print ('EMCT')
-print (EMCT)
+#print (EMCT)
 EMGenotype <- contrast(emmeans(artlm(m, "Genotype"), ~ Genotype), method="pairwise")
 # write.table(EMGenotype$contrasts, file = "PRC_ART_pairwise_comparison_by_Genotype_output.csv", sep = "\t")
-print ('EMGenotype')
-print (EMGenotype)
+#print (EMGenotype)
 
 
 

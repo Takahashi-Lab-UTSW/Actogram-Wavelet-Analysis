@@ -4,6 +4,8 @@
 #	Wobbrock, J.O., Findlater, L., Gergle, D., & Higgins, J.J., (2011) The aligned rank transform for nonparametric factorial analyses using only anova procedures, CHI ‘11, 143-146
 # 	https://CRAN.R-project.org/package=ARTool
 # 		ARTool version: 0.10.7
+# usage:
+#	PRC_NonparametricTwoWayANOVA_ART.R PRC_Table_for_ART-analysis_Imputed.csv
 # byeongha.jeong@utsouthwestern.edu
 
 args <- commandArgs(TRUE)

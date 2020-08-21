@@ -25,6 +25,17 @@ As in the Leise’s paper, the position of the onset detected was dependent on t
 ## Actogram with different sensitivity per light pulse (scan the lowest RMSE product)
 
 ![Alt text](README_figures/Actogram_Npas4--_C2-155-11.png?raw=true "R-squared and RMSE vs. Sensitivity")
+![Alt text](https://latex.codecogs.com/svg.latex?\phi): CT, 
+![Alt text](https://latex.codecogs.com/svg.latex?\Delta\phi): phaseshift
 
-	S: sensitivity
+![Alt text](https://latex.codecogs.com/svg.latex?R^2_b),
+![Alt text](https://latex.codecogs.com/svg.latex?R^2_a): R-squared before and after the light pulse
+
+![Alt text](https://latex.codecogs.com/svg.latex?RMSE_b),
+![Alt text](https://latex.codecogs.com/svg.latex?RMSE_a): RMSE before and after the light pulse
+
+![Alt text](https://latex.codecogs.com/svg.latex?\tau_b),
+![Alt text](https://latex.codecogs.com/svg.latex?\tau_a): period before and after the light pulse
+
+S: sensitivity
 

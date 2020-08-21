@@ -26,3 +26,6 @@ As in the Leise’s paper, the position of the onset detected was dependent on t
 
 ![Alt text](README_figures/Actogram_Npas4--_C2-155-11.png?raw=true "R-squared and RMSE vs. Sensitivity")
 
+	$\pi$
+	S: sensitivity
+

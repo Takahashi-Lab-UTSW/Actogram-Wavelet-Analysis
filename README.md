@@ -11,7 +11,7 @@ The activity onsets were determined by maximal overlap discrete wavelet transfor
 	x(t): actogram count per 15 min	
 	TW_i: vector (time series) of circulary shifted MODWT wavelet (W) coefficients
 	TV: vector of circulary shifted MODWT approximation (V) coefficients
-	X(t): inverse MODWT
+	X(t): actogram reconstruction from wavelet and approximation coefficients by inverse MODWT
 
 ![Alt text](https://latex.codecogs.com/svg.latex?\Large&space;W_{j,t}&space;=&space;\sum_{l=0}^{L_j-1}&space;h_{j,l}&space;~x_{t-1&space;~mod~&space;N}~~~~~~~~~~V_{j,t}&space;=&space;\sum_{l=0}^{L_j-1}&space;g_{j,l}&space;~x_{t-1&space;~mod~&space;N})
 

@@ -13,7 +13,7 @@ The activity onsets were determined by maximal overlap discrete wavelet transfor
 	TV: vector of circulary shifted MODWT approximation (V) coefficients
 	X(t): actogram reconstruction from wavelet and approximation coefficients by inverse MODWT
 
-![Alt text](https://latex.codecogs.com/svg.latex?\Large&space;W_{j,t}&space;=&space;\sum_{l=0}^{L_j-1}&space;h_{j,l}&space;~x_{t-1&space;~mod~&space;N}~~~~~~~~~~V_{j,t}&space;=&space;\sum_{l=0}^{L_j-1}&space;g_{j,l}&space;~x_{t-1&space;~mod~&space;N})
+![Alt text](https://latex.codecogs.com/svg.latex?\Large&space;W_{j,t}&space;=&space;\sum_{l=0}^{L_j-1}&space;h_{j,l}&space;~x_{t-l&space;~mod~&space;N}~~~~~~~~~~V_{j,t}&space;=&space;\sum_{l=0}^{L_j-1}&space;g_{j,l}&space;~x_{t-l&space;~mod~&space;N})
 
 	h_j,l : periodized j-th level MODWT wavelet filter ('d4', 4-tap Daubechies filter)
 	g_j,l : periodized j-th level MODWT scale filter (quadrature mirror filter that corresponds to h_j,l)

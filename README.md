@@ -8,6 +8,7 @@ The activity onsets were determined by maximal overlap discrete wavelet transfor
 
 ![Alt text](README_figures/C2-155-11_MODWT.png?raw=true "Actogram MODWT decomposition")
 
+	x(t): actogram count per 15 min	
 	TW_i: vector (time series) of circulary shifted MODWT wavelet (W) coefficients
 	TV: vector of circulary shifted MODWT approximation (V) coefficients
 	X(t): inverse MODWT
@@ -21,7 +22,7 @@ The activity onsets were determined by maximal overlap discrete wavelet transfor
 
 ![Alt text](https://latex.codecogs.com/svg.latex?\Large&space;X(t)&space;=&space;S_{J0,t}&space;&plus;&space;\sum_{j=1}^{J0=7}&space;D_{j,t})
 
-![Alt text](https://latex.codecogs.com/svg.latex?\Large&S_{J0,t}&space;=&space;\sum_{l=0}^{N-1}&space;g_{j,l}&space;~V_{j,~t&plus;l~&space;mod~&space;N}~~~~~~~~~~D_{j,t}&space;=&space;\sum_{l=0}^{N-1}&space;h_{j,l}&space;~W_{j,~t&plus;l~&space;mod~&space;N})
+![Alt text](https://latex.codecogs.com/svg.latex?\Large&space;S_{J0,t}&space;=&space;\sum_{l=0}^{N-1}&space;g_{j,l}&space;~V_{j,~t&plus;l~&space;mod~&space;N}~~~~~~~~~~D_{j,t}&space;=&space;\sum_{l=0}^{N-1}&space;h_{j,l}&space;~W_{j,~t&plus;l~&space;mod~&space;N})
 
 	S_J0: MODWT smooth
 	D_j,t: j-th level MODWT detail

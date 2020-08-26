@@ -18,7 +18,7 @@ The activity onsets were determined by maximal overlap discrete wavelet transfor
 	h_j,l : periodized j-th level MODWT wavelet filter ('d4', 4-tap Daubechies filter)
 	g_j,l : periodized j-th level MODWT scale filter (quadrature mirror filter that corresponds to h_j,l)
 	L_j: filter width
-	N: total number of frames (length)
+	N: total number of observations (length)
 
 ![Alt text](https://latex.codecogs.com/svg.latex?\Large&space;X(t)&space;=&space;S_{J0,t}&space;&plus;&space;\sum_{j=1}^{J0=7}&space;D_{j,t})
 

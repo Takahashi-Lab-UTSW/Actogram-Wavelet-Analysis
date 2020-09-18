@@ -28,11 +28,11 @@ function [Xbo, Ybo, Xao, Yao, pbo, FitSSEbo, Rsquaredbo, Fstatbo, RMSEbo, pao, F
 	XYao(:,1) = XYao(:,1) + Tcycle;
 	XYao(:,2) = XYao(:,2) - 1;
 
-	XYbo(:,1) = AlignXY(XYbo(:,1), XYbo(:,2), Tcycle);
-	XYao(:,1) = AlignXY(XYao(:,1), XYao(:,2), Tcycle);
+	[Xbo, Ybo] = AlignXY(XYbo(:,1), XYbo(:,2), Tcycle);
+	[Xao, Yao] = AlignXY(XYao(:,1), XYao(:,2), Tcycle);
 
-	[pbo, FitSSEbo, Rsquaredbo, Fstatbo, RMSEbo] = FittingOnsets(XYbo(:,1), XYbo(:,2), 'ro', 'c', BoolShowPlot);
-	[pao, FitSSEao, Rsquaredao, Fstatao, RMSEao] = FittingOnsets(XYao(:,1), XYao(:,2), 'ro', 'c', BoolShowPlot);
+	[pbo, FitSSEbo, Rsquaredbo, Fstatbo, RMSEbo] = FittingOnsets(Xbo, Ybo, 'ro', 'c', BoolShowPlot);
+	[pao, FitSSEao, Rsquaredao, Fstatao, RMSEao] = FittingOnsets(Xao, Yao, 'ro', 'c', BoolShowPlot);
 
 	[PhaseAtLightPulse, PhaseShift] = PhaseShiftOnset (pbo, pao, LightPulseDay, LightPulseTime, Tcycle);
 
@@ -136,16 +136,24 @@ function [PhaseAtLightPulse, PhaseShift] = PhaseShiftOnset (pb, pa, LightPulseDa
 	else
 		PhaseAtLightPulse = -dxbL;
 	end
+	PhaseAtLightPulse = PhaseAtLightPulse*(Tcycle/mb);
+
 	if PhaseAtLightPulse > Tcycle/2.
 		PhaseAtLightPulse = PhaseAtLightPulse - Tcycle;
 	end
+
 	PhaseAtLightPulse = PhaseAtLightPulse + Tcycle/2.;
 	PhaseAtLightPulse = mod(PhaseAtLightPulse, Tcycle);
 
 	% Phase shift
 	PhaseShift = -(xa - xb);
+	PhaseShift = PhaseShift*(Tcycle/mb);
+
 	if (PhaseShift > 12)
 		PhaseShift = PhaseShift - Tcycle;
 	elseif (PhaseShift < -12)
 		PhaseShift = PhaseShift + Tcycle;
 	end
+
+
+

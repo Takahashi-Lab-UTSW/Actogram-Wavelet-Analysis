@@ -28,6 +28,9 @@ The activity onsets were determined by maximal overlap discrete wavelet transfor
 	D_j,t: j-th level MODWT detail
 
 
+## Sensitivity
+As in the Leise’s paper, the position of the onset detected was dependent on the percentage of the sensitivity which controlled the level of threshold for the local peak detection. Because the amplitude of the actogram was not maintained constant during a long period of recording time (~ 5 months per mouse), the different values of sensitivity were applied during the time interval before and after each light pulse in the same actogram. The optimal value of the sensitivity was determined as one that gave the smallest product of two root mean square error (RMSE) values from the two lines which fit onsets before and after each light pulse. In this procedure, the first three days after the light pulse was skipped to improve the fitting score due to an unstable nature of the activity right after the light pulse. Moreover, outliers which were significantly deviated from the fitting lines were automatically suppressed by assigning lower weights than others using iteratively reweighted least squares (“fitlm” function with robust linear regression option in Matlab).
+
 ![Alt text](README_figures/C2-155-11_Day45_Sensitivity0.0_0.8.png?raw=true "Actogram MODWT decomposition")
 
 	black thick line: actogram count per 15 min (15 min binning, raw data: count/min)
@@ -53,8 +56,9 @@ The activity onsets were determined by maximal overlap discrete wavelet transfor
 			https://tleise.people.amherst.edu/CircadianWaveletAnalysis.html
 				WaveletActivityOnsetDetection.m
 
-## Sensitivity
-As in the Leise’s paper, the position of the onset detected was dependent on the percentage of the sensitivity which controlled the level of threshold for the local peak detection. Because the amplitude of the actogram was not maintained constant during a long period of recording time (~ 5 months per mouse), the different values of sensitivity were applied during the time interval before and after each light pulse in the same actogram. The optimal value of the sensitivity was determined as one that gave the smallest product of two root mean square error (RMSE) values from the two lines which fit onsets before and after each light pulse. In this procedure, the first three days after the light pulse was skipped to improve the fitting score due to an unstable nature of the activity right after the light pulse. Moreover, outliers which were significantly deviated from the fitting lines were automatically suppressed by assigning lower weights than others using iteratively reweighted least squares (“fitlm” function with robust linear regression option in Matlab).
+
+
+
 
 ![Alt text](README_figures/Actogram_onsets_with_different_sensitivities.png?raw=true "Actogram onsets with different sensitivities")
 

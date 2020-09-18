@@ -5,7 +5,7 @@
 # 	https://CRAN.R-project.org/package=ARTool
 # 		ARTool version: 0.10.7
 # usage:
-#	PRC_NonparametricTwoWayANOVA_ART.R PRC_Table_for_ART-analysis_Imputed.csv
+#   PRC_NonparametricTwoWayANOVA_ART.R PRC_Table_for_ART-analysis_Imputed.csv
 # byeongha.jeong@utsouthwestern.edu
 
 args <- commandArgs(TRUE)
@@ -63,7 +63,7 @@ EMCT <- contrast(emmeans(artlm(m, "CT"), ~ CT), method="pairwise")
 EMGenotype <- contrast(emmeans(artlm(m, "Genotype"), ~ Genotype), method="pairwise")
 # write.table(EMGenotype$contrasts, file = "PRC_ART_pairwise_comparison_by_Genotype_output.csv", sep = "\t")
 #print (EMGenotype)
-
+dfEMinteraction <- data.frame(EMinteraction)
 
 
 # pairwise comparison by interaction between two factors
@@ -90,6 +90,7 @@ XtickLabelsHead <- matrix(unlist(strsplit(XtickLabels, "-")), ncol=2, byrow=TRUE
 
 library(ggplot2)
 # library(tidyverse)
+#p <- ggplot(data=dfEMinteraction, mapping = aes(x = CT_pairwise, y=-log10(p.value))) +
 p <- ggplot(data=TIdfwoResid[5], mapping = aes(x = rownames(TIdfwoResid), y=-log10(Pr..F.))) +
 		geom_bar(stat="identity") +
 		theme(
